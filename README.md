@@ -1,5 +1,4 @@
 ## User Stories
-
 As a _Guest User_, I want to be able to:
 
 - View everything that a normal user can
@@ -22,12 +21,12 @@ __Challenges and Solutions__
 - 'Reply' to comments > comment on comments, same thing as tagging users in comments
 - Like comments
 - View a list of who has completed each challenge, the number of people who have completed the challenge, the number of likes of each challenge, and who has liked the challenge
-- Unlock and view a list of Solutions once I have completed a challenge 
+- Unlock and view a list of Solutions once I have completed a challenge
 - Upvote solutions to challenges
 
 - Create private groups with friends
   - I can invite new friends to join the group (they'll receive notification and can accept / reject)
-  - We can view a mini leaderboard 
+  - We can view a mini leaderboard
   - We can get notifications when friends complete solutions / create new challenges
 - Click 'view solution' to a challenge, and be given a flash message "are you certain etc" if I still have not submitted a solution
 
@@ -81,3 +80,7 @@ https://gist-it.appspot.com/
 <!-- Take a github file url and prefix it with http://gist-it.appspot.com and embed the result within a <script> tag: -->
 <!-- <script src="http://gist-it.appspot.com/http://github.com/$file"></script> -->
 https://gist.github.com/benbalter/5555251
+
+### Authentication
+- devise-token-auth https://github.com/lynndylanhurley/devise_token_auth
+- jwt
