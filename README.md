@@ -1,3 +1,18 @@
+## Architecture
+
+### Backend
+Rails API <br>
+Postgres Database <br>
+Code Snippets <br>
+Possibly store Repl.it or GitHUB Gists urls <br>
+Serialize JSON responses, send send to React Client <br>
+JWT & Devise Authentication
+
+### Frontend
+React Client <br>
+GraphQL API with Apollo <br>
+JWT Authentication & Cookies 
+
 ## User Stories
 
 As a _Guest User_, I want to be able to:
@@ -81,3 +96,19 @@ https://gist-it.appspot.com/
 <!-- Take a github file url and prefix it with http://gist-it.appspot.com and embed the result within a <script> tag: -->
 <!-- <script src="http://gist-it.appspot.com/http://github.com/$file"></script> -->
 https://gist.github.com/benbalter/5555251
+
+## Syntax Highlighting
+- React Syntax Highlighter <br>
+https://github.com/conorhastings/react-syntax-highlighter/tree/e3e333ccf6404c859a62f3d1c518dc7e03c2506a
+- Prism <br>
+https://prismjs.com/
+- Markdown with React-Markdown<br>
+https://medium.com/young-developer/react-markdown-code-and-syntax-highlighting-632d2f9b4ada
+
+## In-browser Code Editor
+- CodeMirror <br>
+https://codemirror.net/
+- MDXJS <br>
+https://mdxjs.com/guides/live-code
+- Ace <br>
+https://ace.c9.io/#nav=embedding
