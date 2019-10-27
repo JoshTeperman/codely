@@ -8,5 +8,4 @@ class User < ApplicationRecord
   validates :role, presence: true
 
   has_many :challenges
-  belongs_to :team
 end

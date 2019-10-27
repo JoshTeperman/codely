@@ -1,3 +1,10 @@
+puts 'Destroying Records...' 
+User.destroy_all
+Challenge.destroy_all
+
+puts 'Starting Seed...'
+
+puts 'Creating Admin User...'
 admin = User.create!(
   email: 'admin@admin.com', 
   password: 'password', 
@@ -6,13 +13,11 @@ admin = User.create!(
   username: 'Admin User'
 )
 
-administrator_users = Team.create!(
-  name: 'Administrator Users',
-  location: 'Australia'
-)
-
+puts 'Creating Admin Challenge...'
 admin.challenges.create!(
   description: 'Something Something Something Something',
   name: 'Test Challenge',
   language: 'Ruby'
 )
+
+puts 'Finished Seeding'
