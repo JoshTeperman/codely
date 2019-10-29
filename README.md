@@ -4,14 +4,16 @@
 Rails API <br>
 Postgres Database <br>
 Code Snippets <br>
-Possibly store Repl.it or GitHUB Gists urls <br>
-Serialize JSON responses, send send to React Client <br>
+- store in db as JSON
+- possibly create snippets in Repl.it or GitHUB Gists and store / retrieve links<br>
 JWT & Devise Authentication
 
 ### Frontend
 React Client <br>
-GraphQL API with Apollo <sd
-JWT Authentication & Cookies 
+GraphQL API <br>
+JWT auth with localStorage to persist session data <br>
+CodeMirror Text Editor with React Wrapper
+
 
 ## User Stories
 As a _Guest User_, I want to be able to:
