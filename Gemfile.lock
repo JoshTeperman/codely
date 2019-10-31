@@ -81,6 +81,9 @@ GEM
     ffi (1.11.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    graphiql-rails (1.7.0)
+      railties
+      sprockets-rails
     graphql (1.9.12)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
@@ -238,6 +241,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_bot_rails
+  graphiql-rails
   graphql
   jbuilder (~> 2.5)
   jwt
