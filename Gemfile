@@ -62,3 +62,4 @@ gem 'dotenv-rails'
 gem 'webpacker-react'
 
 gem "rubocop", "~> 0.75.1"
+gem 'graphiql-rails', group: :development
