@@ -12,7 +12,9 @@ JWT & Devise Authentication
 React Client <br>
 GraphQL API <br>
 JWT auth with localStorage to persist session data <br>
-CodeMirror Text Editor with React Wrapper
+CodeMirror Text Editor with React Wrapper for writing and editing code <br>
+(something for viewing code that provide syntax highlighting)
+
 
 
 ## User Stories
