@@ -1,5 +1,4 @@
 import React from 'react'
-import CodeMirror from './components/Codemirror';
 
 const App = () => {
   const options = {
@@ -8,7 +7,6 @@ const App = () => {
   }
   return (
     <div>
-      <CodeMirror options={options} language={'javascript'} />
       <p>Index (App) Component</p>
     </div>
   )

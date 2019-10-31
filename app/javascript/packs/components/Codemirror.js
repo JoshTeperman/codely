@@ -10,10 +10,13 @@ const Codemirror = ({ options, language, }) => {
   useEffect(() => {
     CodeMirror.fromTextArea(inputElement.current, options)
   }, [options]);
-  
+
   return (
     <textarea ref={inputElement} defaultValue="New note ..." />
   );
 };
 
 export default Codemirror;
+
+// import CodeMirror from './components/Codemirror';
+// <CodeMirror options={options} language={'javascript'} />
