@@ -109,6 +109,8 @@ https://medium.com/young-developer/react-markdown-code-and-syntax-highlighting-6
 ## In-browser Code Editor
 - CodeMirror <br>
 https://codemirror.net/
+- Cassidy Williams' Codemirror React Component:
+  - https://github.com/cassidoo/react-hooks-codemirror
 - MDXJS <br>
 https://mdxjs.com/guides/live-code
 - Ace <br>
