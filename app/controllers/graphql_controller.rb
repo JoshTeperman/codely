@@ -3,9 +3,9 @@ class GraphqlController < ApplicationController
     variables = ensure_hash(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
+    user = User.find_by(role: :admin)
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+      user: user
     }
     result = CodelySchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
