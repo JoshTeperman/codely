@@ -3,7 +3,6 @@ module Types
     field :admin, AdminType, 'All the data for admin user', null: false
 
     def admin
-      binding.pry
       return user if user.role == 'admin'
     end
 
