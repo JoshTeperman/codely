@@ -7,5 +7,5 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :role, presence: true
 
-  has_many :challenges
+  has_many :challenges, dependent: :destroy
 end
