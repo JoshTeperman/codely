@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components';
 import CodeMirror from './components/CodeMirror';
+import GlobalStyle from './GlobalStyle';
 
 const App = () => {
   const options = {
@@ -9,7 +9,10 @@ const App = () => {
     setSize: 100,
   }
   return (
-    <CodeMirror options={options} language={'javascript'} ></CodeMirror>
+    <>
+      <GlobalStyle />
+      <CodeMirror options={options} language={'javascript'} ></CodeMirror>
+    </>
   )
 }
 
