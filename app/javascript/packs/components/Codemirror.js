@@ -19,7 +19,7 @@ const CodeMirror = ({ options, language }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    debugger
+    console.log('handleSubmit:', textArea.value);
   }
 
   return (
@@ -27,7 +27,7 @@ const CodeMirror = ({ options, language }) => {
     <form>
       <label>CodeMirror Form</label>
       <textarea ref={inputElement} defaultValue="Write some code ..." />
-      <button onClick={(event) => handleSubmit(event)} onKeyPress={e => e.key === 'Enter' && e.stopPropagation() }>Submit</button>
+      <button onClick={(event) => handleSubmit(event, inputElement.current)}>Submit</button>
     </form>
     </>
   );
