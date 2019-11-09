@@ -18,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
     max-width: 90vw;
     min-width: 50vw
   }
+
+  .CodeMirror-sizer {
+    margin-left: 30px;
+  }
 `;
 
 export default GlobalStyle;

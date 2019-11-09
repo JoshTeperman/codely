@@ -14,12 +14,12 @@ const CodeMirror = ({ options, language }) => {
   }, [options]);
 
   useEffect(() => {
-    console.log('code value changed', { codeValue, current: inputElement.current });
-  }, [codeValue, inputElement.current])
+    console.log('code value changed', { codeValue });
+  }, [codeValue])
 
-  const handleSubmit = (event, textArea) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
-    console.log('handleSubmit:', textArea.value);
+    debugger
   }
 
   return (
@@ -27,7 +27,7 @@ const CodeMirror = ({ options, language }) => {
     <form>
       <label>CodeMirror Form</label>
       <textarea ref={inputElement} defaultValue="Write some code ..." />
-      <button onClick={(event) => handleSubmit(event, inputElement.current)}>Submit</button>
+      <button onClick={(event) => handleSubmit(event)} onKeyPress={e => e.key === 'Enter' && e.stopPropagation() }>Submit</button>
     </form>
     </>
   );
