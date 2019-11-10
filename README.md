@@ -118,6 +118,9 @@ https://mdxjs.com/guides/live-code
 - Ace <br>
 https://ace.c9.io/#nav=embedding
 
+## Testing answers
+- embed Repls where they can post their code and run against tests
+
 ### Authentication
 - devise-token-auth https://github.com/lynndylanhurley/devise_token_auth
 - jwt
