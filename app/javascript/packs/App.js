@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import GraphQlProvider from './containers/graphql/Provider';
+import Challenges from './containers/Challenges';
 
 const App = () => {
   return (
-    <div>
-      <p>Index (App) Component</p>
-    </div>
+    <GraphQlProvider>
+      <Challenges />
+    </GraphQlProvider>
   )
 }
 
