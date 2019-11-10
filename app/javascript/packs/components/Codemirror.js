@@ -5,21 +5,22 @@ import 'codemirror/lib/codemirror.css';
 const CodeMirror = ({ options, language }) => {
   require(`codemirror/mode/${language}/${language}`);
   const inputElement = useRef();
-  const [codeValue, setCodeValue] = useState('initial value');
+  const editor = useRef();
+  const [code, setCode] = useState('initial value');
 
   useEffect(() => {
-    const myCodeMirror = Codemirror.fromTextArea(inputElement.current, options)
-    setCodeValue(myCodeMirror.getValue())
-    console.log('useEffect');
+    editor.current = Codemirror.fromTextArea(inputElement.current, options)
+    setCode(editor.current.getValue())
   }, [options]);
 
   useEffect(() => {
-    console.log('code value changed', { codeValue });
-  }, [codeValue])
+    console.log('code value changed', { code });
+  }, [code])
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event, editor) => {
     event.preventDefault()
-    debugger
+    const currentCode = editor.current.getValue()
+    if (code !== currentCode) { setCode(currentCode) }
   }
 
   return (
@@ -27,7 +28,7 @@ const CodeMirror = ({ options, language }) => {
     <form>
       <label>CodeMirror Form</label>
       <textarea ref={inputElement} defaultValue="Write some code ..." />
-      <button onClick={(event) => handleSubmit(event)} onKeyPress={e => e.key === 'Enter' && e.stopPropagation() }>Submit</button>
+      <button onClick={(event) => handleSubmit(event, editor)}>Submit</button>
     </form>
     </>
   );
