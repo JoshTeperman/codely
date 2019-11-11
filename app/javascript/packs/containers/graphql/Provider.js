@@ -1,5 +1,6 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
+import PropTypes from 'prop-types';
 import client from '../../graphql'
 
 const Provider = ({ children }) => (
@@ -7,5 +8,9 @@ const Provider = ({ children }) => (
     {children}
   </ApolloProvider>
 );
+
+Provider.propTypes = {
+  children: PropTypes.object.isRequired,
+}
 
 export default Provider;

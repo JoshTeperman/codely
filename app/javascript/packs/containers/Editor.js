@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Codemirror from 'codemirror';
+import PropTypes from 'prop-types';
+
 import 'codemirror/lib/codemirror.css';
 
 const CodeMirror = ({ options, language }) => {
@@ -34,11 +36,21 @@ const CodeMirror = ({ options, language }) => {
   );
 };
 
+CodeMirror.propTypes = {
+  options: PropTypes.object,
+  language: PropTypes.string,
+};
+
+CodeMirror.defaultProps = {
+  options: {},
+  language: "",
+};
+
 const Editor = () => {
   const options = {
     lineNumbers: true,
     tabSize: 2,
-  }
+  };
 
   return(
     <CodeMirror options={options} language={'javascript'} ></CodeMirror>

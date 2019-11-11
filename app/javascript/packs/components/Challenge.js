@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Challenge = ({ challenge: { name, description, language }}) => {
   return (
@@ -9,5 +10,9 @@ const Challenge = ({ challenge: { name, description, language }}) => {
     </div>
   );
 }
+
+Challenge.propTypes = {
+  challenge: PropTypes.object.isRequired,
+};
 
 export default Challenge;
