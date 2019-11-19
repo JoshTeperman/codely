@@ -1,9 +1,13 @@
 import React from 'react';
 import { MockedProvider } from '@apollo/react-testing';
-import { render, wait } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 
 import Challenges from '../Challenges'
 import { GET_CHALLENGES } from '../graphql/queries/getChallenges';
+
+async function wait(ms = 0) {
+  await act(() => new Promise(resolve => setTimeout(resolve, ms)));
+}
 
 const mocks = [
   {
@@ -38,28 +42,32 @@ const mocks = [
 ]
 
 describe('Challenges', () => {
-  let renderedChallenges;
+  let renderChallenges;
 
   beforeEach(() => {
-    renderedChallenges = render(
-      <MockedProvider mocks={mocks}>
+    renderChallenges = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
         <Challenges />
       </MockedProvider>
-    )
-  })
-  describe('When the query returns a response', () => {
-    describe('When the status is loading', () => {
-      it('Should show a Loading message', () => {
-        expect(renderedChallenges.getByText('Loading...')).tobeInTheDocument();
-      })
+    );
+  });
+
+  it("should have 'Challenges' Heading", () => {
+    expect(renderChallenges.getByText('Challenges')).toBeInTheDocument();
+
+  });
+
+  describe('When a request is made to the server and a response is returned', () => {
+    it('should show the Loader', () => {
+      expect(renderChallenges.getByText('...Loading')).toBeInTheDocument();
     })
-    describe('Once the data loads', () => {
-      // TODO: Assert DOM tree includes Challenge component rather than Challenge name
-      it('It should render Challenges', async () => {
-        await wait(() => {
-          expect(renderedChallenges.getByText('Test Challenge')).tobeInTheDocument();
-        })
-      })
+
+    it('should show the Challenges data', async () => {
+      await wait(0)
+      
+      expect(renderChallenges.container.textContent).toMatch('Test Challenge')
+      expect(renderChallenges.container.textContent).toMatch('Random Challenge')
+      expect(renderChallenges.container.textContent).toMatch('Yet Another Admin Challenge')
     })
   })
 })
