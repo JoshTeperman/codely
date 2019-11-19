@@ -5,7 +5,7 @@ import { render, act } from '@testing-library/react';
 import Challenges from '../Challenges'
 import { GET_CHALLENGES } from '../graphql/queries/getChallenges';
 
-async function wait(ms = 0) {
+const wait = async (ms = 0) => {
   await act(() => new Promise(resolve => setTimeout(resolve, ms)));
 }
 
