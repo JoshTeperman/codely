@@ -16,6 +16,7 @@ const Challenges = () => {
   
   return (
     <>
+      <h1>Challenges</h1>
       {loading && <h3>...Loading</h3>}
       {challenges && challenges.map(challenge => <Challenge key={challenge.id} challenge={challenge} />)}
     </>
