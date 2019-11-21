@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_CHALLENGES } from './graphql/queries/getChallenges';
 
@@ -19,6 +20,7 @@ const Challenges = () => {
       <h1>Challenges</h1>
       {loading && <h3>...Loading</h3>}
       {challenges && challenges.map(challenge => <Challenge key={challenge.id} challenge={challenge} />)}
+      <Link to="/challenges/new">New Challenge</Link>
     </>
   )
 }

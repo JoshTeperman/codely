@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Form from '../components';
+import Form from '../components/Form';
 
-const [name, setName] = useState('')
-const [description, setDescription] = useState('')
-const [language, setLanguage] = useState('')
+const [name, setName] = useState('');
+const [description, setDescription] = useState('');
+const [language, setLanguage] = useState('');
 
 const handleSubmit = (event) => {
   event.preventDefault()
@@ -38,4 +39,4 @@ const CreateChallenge = () => (
   </>
 );
 
-export default CreateChallenge;
+export default withRouter(CreateChallenge);

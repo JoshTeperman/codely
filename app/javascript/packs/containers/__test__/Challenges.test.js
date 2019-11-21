@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { MockedProvider } from '@apollo/react-testing';
 import { render, act } from '@testing-library/react';
 
@@ -47,7 +48,9 @@ describe('Challenges', () => {
   beforeEach(() => {
     renderChallenges = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Challenges />
+        <BrowserRouter>
+          <Challenges />
+        </BrowserRouter>
       </MockedProvider>
     );
   });
