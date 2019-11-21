@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Form from '../components/Form';
 
-const [name, setName] = useState('');
-const [description, setDescription] = useState('');
-const [language, setLanguage] = useState('');
+// const [name, setName] = useState('');
+// const [description, setDescription] = useState('');
+// const [language, setLanguage] = useState('');
 
 const handleSubmit = (event) => {
   event.preventDefault()
@@ -16,17 +15,17 @@ const CreateChallenge = () => (
   <>
     //Name
     <textfield
-      onChange={event => setName(event.target.value)}
+      // onChange={event => setName(event.target.value)}
       defaultValue="Choose a sweet name for your challenge..."
     />
     //Description
     <textarea
-      onChange={event => setDescription(event.target.value)}
+      // onChange={event => setDescription(event.target.value)}
       defaultValue="Describe you challenge..."
     />
     //Language
     <textfield
-      onChange={event => setLanguage(event.target.value)}
+      // onChange={event => setLanguage(event.target.value)}
       defaultValue="What language..."
       // needs to be a <select> field
     />
@@ -39,4 +38,4 @@ const CreateChallenge = () => (
   </>
 );
 
-export default withRouter(CreateChallenge);
+export default CreateChallenge;
