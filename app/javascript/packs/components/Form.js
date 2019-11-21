@@ -7,9 +7,9 @@ const Form = ({children, ...rest}) => (
   </form>
 );
 
-Form.proptypes = {
+Form.propTypes = {
   children: PropTypes.oneOfType([
-    Proptypes.arrayOf(PropTypes.node),
+    PropTypes.arrayOf(PropTypes.node),
     PropTypes.PropTypes.node,
   ]).isRequired,
 }
