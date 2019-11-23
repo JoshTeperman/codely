@@ -4,18 +4,17 @@ import GraphQlProvider from './containers/graphql/Provider';
 import Challenges from './containers/Challenges';
 import CreateChallenge from './containers/CreateChallenge';
 import NoMatch from './components/NoMatch';
-import Home from './components/Home';
 import About from './components/About';
 
-const App = (props) => {
+const App = () => {
   return (
     <GraphQlProvider>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/challenges/new" render={props => <CreateChallenge {...props} />} />
-          <Route exact path="/challenges" render={props => <Challenges {...props} />} />
-          <Route exact path="/about" render={props => <About {...props} />} />
-          <Route exact path="/" render={props => <Home {...props} />} />
+          <Route exact path="/challenges/new" component={CreateChallenge} />
+          <Route exact path="/challenges" component={Challenges} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/" component={Challenges} />
           <Route component={NoMatch} />
         </Switch>
       </BrowserRouter>
