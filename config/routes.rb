@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   post "/graphql", to: "graphql#execute"
   devise_for :users
 
-  resources :challenges
+  get '/challenges', to: 'challenges#index'
+  get '/challenges/*other', to: 'challenges#index'
 
   root to: 'challenges#index'
 end

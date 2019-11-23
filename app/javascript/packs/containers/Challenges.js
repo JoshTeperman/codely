@@ -5,26 +5,25 @@ import { GET_CHALLENGES } from './graphql/queries/getChallenges';
 
 import Challenge from '../components/Challenge';
 
-const Challenges = ({ match }) => {
-  console.log(match);
+const Challenges = ({match, history}) => {
   const [challenges, setChallenges] = useState(null)
   const { loading, error, data } = useQuery(GET_CHALLENGES)
-
   useEffect(() => {
     if (!loading && data) {
       setChallenges(data.challenges)
     }
   }, [loading, data, error])
 
+  console.log({match});
   return (
     <>
       <h1>Challenges</h1>
       {loading && <h3>...Loading</h3>}
       {challenges && challenges.map(challenge => <Challenge key={challenge.id} challenge={challenge} />)}
-      <Link to="/">Home</Link>
+      <Link to={{pathname:"/", state: {joshState: "Josh's State"}}} >Home</Link>
       <Link to="/about">About</Link>
-      <Link to="/challengesnew">New Challenge</Link>
       <Link to="/challenges">View All Challenges</Link>
+      <button onClick={() => history.push('/')}>click me</button>
     </>
   )
 }

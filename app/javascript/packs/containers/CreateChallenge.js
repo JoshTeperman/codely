@@ -11,31 +11,36 @@ const handleSubmit = (event) => {
   // CreateChallenge mutation
 }
 
-const CreateChallenge = () => (
-  <>
-    //Name
-    <textfield
-      // onChange={event => setName(event.target.value)}
-      defaultValue="Choose a sweet name for your challenge..."
-    />
-    //Description
-    <textarea
-      // onChange={event => setDescription(event.target.value)}
-      defaultValue="Describe you challenge..."
-    />
-    //Language
-    <textfield
-      // onChange={event => setLanguage(event.target.value)}
-      defaultValue="What language..."
-      // needs to be a <select> field
-    />
-    //Submit
-    <button
-      onClick={(event) => handleSubmit(event)}
-    >
-      Create
-    </button>
-  </>
-);
+const CreateChallenge = () => {
+  console.log('create challenge page')
+  return (
+    <>
+      //Name
+      <h1 style={{color: 'red'}}>Hello</h1>
+      <textfield
+        // onChange={event => setName(event.target.value)}
+        defaultValue="Choose a sweet name for your challenge..."
+      />
+      //Description
+      <textarea
+        // onChange={event => setDescription(event.target.value)}
+        defaultValue="Describe your challenge..."
+      />
+      //Language
+      <textfield
+        // onChange={event => setLanguage(event.target.value)}
+        defaultValue="What language..."
+        // needs to be a <select> field
+      />
+      //Submit
+      <button
+        onClick={(event) => handleSubmit(event)}
+      >
+        Create
+      </button>
+    </>
+
+  )
+}
 
 export default CreateChallenge;

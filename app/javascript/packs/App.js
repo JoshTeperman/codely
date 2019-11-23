@@ -3,20 +3,20 @@ import { BrowserRouter, Route, Switch }  from 'react-router-dom';
 import GraphQlProvider from './containers/graphql/Provider';
 import Challenges from './containers/Challenges';
 import CreateChallenge from './containers/CreateChallenge';
-import NotFound from './components/NotFound';
+import NoMatch from './components/NoMatch';
 import Home from './components/Home';
 import About from './components/About';
 
-const App = () => {
+const App = (props) => {
   return (
     <GraphQlProvider>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/challenges" component={Challenges} />
-          <Route path="/challengesnew" component={CreateChallenge} />
-          <Route component={NotFound} />
+          <Route exact path="/challenges/new" render={props => <CreateChallenge {...props} />} />
+          <Route exact path="/challenges" render={props => <Challenges {...props} />} />
+          <Route exact path="/about" render={props => <About {...props} />} />
+          <Route exact path="/" render={props => <Home {...props} />} />
+          <Route component={NoMatch} />
         </Switch>
       </BrowserRouter>
     </GraphQlProvider>
