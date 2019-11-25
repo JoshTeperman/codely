@@ -9,8 +9,9 @@ const StyledButton = styled(MUIButton)`
 
 const Button = ({
   children,
+  ...rest
 }) => (
-  <StyledButton>
+  <StyledButton {...rest}>
     {children}
   </StyledButton>
 );
