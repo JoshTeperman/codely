@@ -14,6 +14,7 @@ const InputField = ({
   defaultValue,
   fullWidth,
   autoFocus,
+  ...rest
 }) => (
   <StyledInput
     placeholder={placeholder}
@@ -22,6 +23,7 @@ const InputField = ({
     defaultValue={defaultValue}
     fullWidth={fullWidth}
     autoFocus={autoFocus}
+    {...rest}
   />
 );
 
