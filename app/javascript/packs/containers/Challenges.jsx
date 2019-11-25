@@ -20,7 +20,6 @@ const Challenges = ({match, history}) => {
       <h1>Challenges</h1>
       {loading && <h3>...Loading</h3>}
       {challenges && challenges.map(challenge => <Challenge key={challenge.id} challenge={challenge} />)}
-      <button onClick={() => history.push('/')}>click me</button>
     </>
   )
 }
